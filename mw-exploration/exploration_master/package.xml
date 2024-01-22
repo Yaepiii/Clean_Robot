@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>exploration_master</name>
+  <version>0.3.4</version>
+  <description>Exploration framework</description>
+
+  <license>BSD</license>
+
+  <author email="yaepiii@126.com">Jia Yanpeng</author>
+  <maintainer email="yaepiii@126.com">Jia Yanpeng</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>exploration_msgs</exec_depend>
+  <exec_depend>explore_k</exec_depend>
+  <exec_depend>polygon_layer</exec_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

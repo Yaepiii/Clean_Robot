@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>exploration_msgs</name>
+  <version>0.3.4</version>
+  <description>Exploration messages, services, and actions</description>
+
+  <author email="yaepiii@126.com">Jia Yanpeng</author>
+  <maintainer email="yaepiii@126.com">Jia Yanpeng</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>actionlib_msgs</depend>
+  <depend>geometry_msgs</depend>
+
+  <build_depend>message_generation</build_depend>
+
+  <exec_depend>message_runtime</exec_depend>
+
+</package>

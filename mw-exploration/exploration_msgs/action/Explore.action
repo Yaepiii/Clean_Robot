@@ -1,0 +1,14 @@
+# Goal
+# Boundary for exploration task
+geometry_msgs/PolygonStamped boundary
+
+# Starting point for exploration task, inside the boundary
+geometry_msgs/PointStamped start_point
+---
+---
+# Feedback
+# Current movement goal for exploration
+geometry_msgs/PoseStamped current_goal
+
+# Current robot pose
+geometry_msgs/PoseStamped robot_pose
