@@ -1,0 +1,8 @@
+<launch>
+  <!--Your slam node-->
+  <include file="$(find mw-exploration)/launch/include/gmapping.launch.xml"/>
+
+  <!-- Move base -->
+ <include file="$(find mw-exploration)/launch/include/move_base.launch.xml"/>
+ 
+</launch>

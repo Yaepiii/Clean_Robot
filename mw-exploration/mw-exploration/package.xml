@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>mw-exploration</name>
+  <version>0.3.4</version>
+
+  <description>Mulit-Weight frontier-based exploration.</description>
+
+  <author email="yaepiii@126.com">Jia Yanpeng</author>
+  <maintainer email="yaepiii@126.com">Jia Yanpeng</maintainer>
+  <license>BSD</license>
+
+  <!-- acknowledgements
+  <author>Charles DuHadway</author>
+  <url>http://ros.org/wiki/explore</url>
+  <author>Paul Bovbel</author>
+  <url>https://github.com/paulbovbel/frontier_exploration</url>
+  -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>move_base_msgs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>map_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>actionlib_msgs</depend>
+  <depend>tf</depend>
+  <depend>costmap_2d</depend>
+  <depend>actionlib</depend>
+  <depend>exploration_msgs</depend>
+  <depend>polygon_layer</depend>
+  <depend>dynamic_reconfigure</depend>
+
+  <test_depend>roslaunch</test_depend>
+</package>

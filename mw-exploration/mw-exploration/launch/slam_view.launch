@@ -1,0 +1,13 @@
+<launch>
+  <!--Your slam node-->
+  <include file="$(find mw-exploration)/launch/include/gmapping.launch.xml"/>
+
+  <!-- Move base -->
+  <include file="$(find mw-exploration)/launch/include/move_base.launch.xml"/>
+ 
+  <!-- Show trajectory -->
+  <include file="$(find show_trajectory)/launch/show_trajectory.launch"/>
+ 
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mw-exploration)/rviz/explore_view.rviz"/>
+ 
+</launch>
