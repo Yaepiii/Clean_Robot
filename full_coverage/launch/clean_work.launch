@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- 启动导航系统，用作目标点路径规划，实现躲避小障碍物-->
+    <include file="$(find full_coverage)/launch/slam_with_amcl.launch"/>
+    <!-- 路径规划器 -->
+    <node pkg="full_coverage" type="path_planning_node" respawn="false" name="path_planning_node" output="screen" clear_params="true">
+        <rosparam file="$(find full_coverage)/param/cleaning_costmap_params.yaml" command="load" />
+    </node>
+    <!-- 根据喷洒的路径向导航系统发送目标点位 -->
+    <!--设定距离当前目标点多近时候发布下一个目标点 -->
+    <param name="/NextGoal/tolerance_goal" value="0.8" />
+    <node pkg="full_coverage" type="next_goal" respawn="true" name="next_goal" output="screen" />
+    
+    <node name="show_trajectory" pkg="show_trajectory" type="show_trajectory" output="screen"/>
+    <!--机器人底盘坐标系-->
+    <param name="robot_base_frame" value="base_footprint"/>
+    <!--全局坐标系-->
+    <param name="global_frame" value="map"/>
+</launch>

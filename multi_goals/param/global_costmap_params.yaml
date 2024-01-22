@@ -1,0 +1,21 @@
+global_costmap:
+  #Coordinate frame and tf parameters
+  global_frame: map
+  robot_base_frame: base_footprint
+  transform_tolerance: 1.0 #0.2
+   
+  #Rate parameters
+  update_frequency: 5.0 #5.0
+  publish_frequency: 5.0 #0.0
+   
+  #Map management parameters
+  static_map: true
+  rolling_window: false
+   
+  plugins:
+    - {name: static_layer,            type: "costmap_2d::StaticLayer"}
+    - {name: obstacle_layer,          type: "costmap_2d::ObstacleLayer"}
+    - {name: global_inflation_layer,  type: "costmap_2d::InflationLayer"}
+    #- {name: sonar,   type: "range_sensor_layer::RangeSensorLayer"}
+    #- {name: polygon_layer,           type: "polygon_layer::PolygonLayer"}
+

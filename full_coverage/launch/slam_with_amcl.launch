@@ -1,0 +1,21 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="map_file" default="$(find full_coverage)/maps/test.yaml"/>
+  <arg name="open_rviz" default="true"/>
+  <arg name="move_forward_only" default="false"/>
+
+  <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <!-- AMCL -->
+  <include file="$(find full_coverage)/launch/include/robot_amcl.launch.xml"/>
+
+  <!-- Move base -->
+  <include file="$(find full_coverage)/launch/include/move_base.launch.xml"/>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find full_coverage)/rviz/clean_view.rviz"/>
+  </group>
+</launch>

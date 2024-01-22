@@ -1,0 +1,25 @@
+<launch>
+  <!-- Map server -->
+  <arg name="map_file" default="$(find multi_goals)/map/test.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <!-- Localization -->
+  <arg name="initial_pose_x" default="0.0"/>
+  <arg name="initial_pose_y" default="-9.0"/>
+  <arg name="initial_pose_a" default="1.57"/>
+  <arg name="custom_amcl_launch_file" default="$(find multi_goals)/launch/include/robot_amcl.launch.xml"/>
+
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+
+  <!-- Move base -->
+  <include file="$(find multi_goals)/launch/include/move_base.launch.xml"/>
+ 
+  <!-- Show trajectory -->
+  <include file="$(find show_trajectory)/launch/show_trajectory.launch"/>
+ 
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find multi_goals)/rviz/multi_goals_view.rviz"/>
+</launch>

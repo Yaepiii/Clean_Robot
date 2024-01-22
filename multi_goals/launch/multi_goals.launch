@@ -1,0 +1,13 @@
+<launch>
+
+  <node pkg="multi_goals" type="multi_goals" respawn="false" name="multi_goals" output="screen">
+  <!--机器人底盘坐标系-->
+  <param name="robot_base_frame" value="base_footprint"/>
+  <!--全局坐标系-->
+  <param name="global_frame" value="map"/>
+  <!--变换机器人姿势时使用的变换容差-->
+  <param name="transform_tolerance" value="0.3"/>
+  
+</node>
+
+</launch>
