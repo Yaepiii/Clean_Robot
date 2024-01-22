@@ -1,0 +1,9 @@
+<launch>
+
+<node name="show_trajectory" pkg="show_trajectory" type="show_trajectory" output="screen"/>
+  <!--机器人底盘坐标系-->
+  <param name="robot_base_frame" value="base_footprint"/>
+  <!--全局坐标系-->
+  <param name="global_frame" value="map"/>
+  
+</launch>
